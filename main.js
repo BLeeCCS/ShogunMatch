@@ -3,7 +3,7 @@ $(document).ready(intializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = 0;
-var max_matches = 9;
+var max_matches = 8;
 var attempts = 0;
 var games_played = 0;
 var image1, image2;
@@ -59,6 +59,7 @@ function handleCardClick(event) {
       secondCardClicked = null;
       ++matches;
       $(".lfz-card").on("click", handleCardClick);
+      console.log(matches,max_matches);
       if (matches === max_matches) {
         var modal = {
           "width":"40vw",
