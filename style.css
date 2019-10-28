@@ -9,24 +9,32 @@ body {
   background-size:contain;
   position: absolute;
   background-repeat: no-repeat;
-  left:25vw;
-  top:3vh;
-  height:15vh;
+  left: 6vw;
+  top:1vh;
+  height:20vh;
   width:50vw;
 }
 
 #decor {
-  display:none;
+  background-image: url(./images/Samurai_BG.png);
+  position: absolute;
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:80vh;
+  width:20vw;
+  right:5vw;
+  top:6vh;
 }
 
 aside {
   display: inline-block;
   display: flex;
-  margin:auto;
-  width:100vw;
+  flex-direction: column;
+  width:10vw;
+  height: 5vh;
   position: relative;
-  top:80vh;
-  left:3vw;
+  top:25vh;
+  font-size:1rem;
 }
 
 aside > div {
@@ -37,37 +45,21 @@ aside > div {
   position: relative;
 }
 
-#gamesPlayed,#attemps,#accuracy {
-  position: relative;
-  top:5vh;
-}
-
-#gamesPlayed {
-  right:18vw;
-}
-
-#attemps {
-  right:14vw;
-}
-
-#accuracy {
-  right: 16vw;
-}
-
 main {
   display: inline-block;
-  width:100vw;
+  width:40vw;
   height: 55vh;
   margin: auto;
   position: relative;
-  top:20vh;
+  top:1vh;
+  left:33vw;
 } 
 
 .container {
   position: relative;
   display:flex;
   flex-flow: wrap;
-  width:100vw;
+  width:40vw;
   height:55vh;
   margin:auto;
 }
@@ -75,10 +67,10 @@ main {
 .container > div{
   display: inline-block;
   background-color: black;
-  width:19vw;
-  height: 13vh;
+  width:7vw;
+  height: 18vh;
   position: relative;
-  margin: 0 3vw 0 3vw;
+  margin: 1vh 1vw 1vh 1vw;
 }
 
 .lfz-card, .background {
@@ -195,7 +187,208 @@ main {
   display: none;
 }
 
-@media only screen and (min-width: 411px) {
+@media only screen and (max-width: 1024px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin:auto;
+  }
+  
+  #title {
+    background-image: url(./images/Title.png);
+    background-size:contain;
+    position: absolute;
+    background-repeat: no-repeat;
+    left:30vw;
+    top:1vh;
+    height:15vh;
+    width:50vw;
+  }
+  
+  #decor {
+    display:none;
+  }
+  
+  aside {
+    display: inline-block;
+    display: flex;
+    margin:auto;
+    width:100vw;
+    height: 5vh;
+    position: relative;
+    top:90vh;
+    left:3vw;
+    font-size:2rem;
+  }
+  
+  aside > div {
+    display:inline-block;
+    background-color:whitesmoke;
+    margin:auto;
+    opacity: 0.6;
+    position: relative;
+  }
+  
+  #gamesPlayed,#attemps,#accuracy {
+    position: relative;
+    top:5vh;
+  }
+  
+  #gamesPlayed {
+    right:18vw;
+  }
+  
+  #attemps {
+    right:14vw;
+  }
+  
+  #accuracy {
+    right: 16vw;
+  }
+  
+  main {
+    display: inline-block;
+    width:100vw;
+    height: 55vh;
+    margin: auto;
+    position: relative;
+    top:12vh;
+  } 
+  
+  .container {
+    position: relative;
+    display:flex;
+    flex-flow: wrap;
+    width:100vw;
+    height:55vh;
+    margin:auto;
+  }
+  
+  .container > div{
+    display: inline-block;
+    background-color: black;
+    width:19vw;
+    height: 17.5vh;
+    position: relative;
+    margin: 0 3vw 1vh 3vw;
+  }
+  
+  .lfz-card, .background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width:100%;
+  }
+  
+  .lfz-card {
+    background-image: url("./images/CardBack.png");
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .container > div:nth-child(1) > .background {
+    background-image: url("./images/Samurai_1.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(2) > .background {
+    background-image: url("./images/Samurai_2.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(3) > .background {
+    background-image: url("./images/Samurai_3.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(4) > .background {
+    background-image: url("./images/Samurai_4.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(5) > .background {
+    background-image: url("./images/Samurai_5.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(6) > .background {
+    background-image: url("./images/Samurai_6.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(7) > .background {
+    background-image: url("./images/Samurai_7.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(8) > .background {
+    background-image: url("./images/Samurai_8.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(9) > .background {
+    background-image: url("./images/Samurai_1.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(10) > .background {
+    background-image: url("./images/Samurai_2.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(11) > .background {
+    background-image: url("./images/Samurai_3.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(12) > .background {
+    background-image: url("./images/Samurai_4.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(13) > .background {
+    background-image: url("./images/Samurai_5.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(14) > .background {
+    background-image: url("./images/Samurai_6.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(15) > .background {
+    background-image: url("./images/Samurai_7.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .container > div:nth-child(16) > .background {
+    background-image: url("./images/Samurai_8.png");
+    position: absolute;
+    top:0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 414px) {
   body {
     height: 100vh;
     width: 100vw;
@@ -233,6 +426,7 @@ main {
     margin:auto;
     opacity: 0.6;
     position: relative;
+    font-size:1rem;
   }
   
   #gamesPlayed,#attemps,#accuracy {
