@@ -8,6 +8,35 @@ var attempts = 0;
 var games_played = 0;
 var image1, image2;
 
+function intializeApp() {
+  var title = $("<div>").attr("id","title");
+  var decor = $("<div>").attr("id", "decor");
+  var aside = $("<aside>");
+  var main = $("<main>").append($("<div>").addClass("container"));
+
+  for (var i = 1; i <= 6; i++) {
+    aside.append($("<div>"));
+  }
+
+  $("body").append(title,decor,aside,main);
+
+  $("aside > div:nth-child(1)").text("Games Played");
+  $("aside > div:nth-child(2)").attr("id", "gamesPlayed").text("0");
+  $("aside > div:nth-child(3)").text("Attemps");
+  $("aside > div:nth-child(4)").attr("id", "attemps").text("0");
+  $("aside > div:nth-child(5)").text("Accuracy");
+  $("aside > div:nth-child(6)").attr("id", "accuracy").text("0%");
+
+  for (var j = 1; j <= 16; j++) {
+    var firstDiv = $("<div>").addClass("lfz-card");
+    var secondDiv = $("<div>").addClass("background");
+    var divContainer = $("<div>").append(firstDiv,secondDiv);
+    $(".container").append(divContainer);
+  }
+
+  $(".lfz-card").on("click", handleCardClick);
+}
+
 function calculateAccuracy(){
   var accuracy = matches / attempts;
   accuracy = accuracy.toFixed(2) * 100;
@@ -24,10 +53,6 @@ function displayStats(){
 function resetStats(){
   matches = attempts = 0;
   $(".lfz-card").removeClass("hidden");
-}
-
-function intializeApp() {
-  $(".lfz-card").on("click",handleCardClick);
 }
 
 function handleCardClick(event) {
