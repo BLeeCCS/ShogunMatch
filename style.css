@@ -9,10 +9,8 @@ body {
   background-size:contain;
   position: absolute;
   background-repeat: no-repeat;
-  left: 6vw;
-  top:1vh;
   height:20vh;
-  width:50vw;
+  width:100%;
 }
 
 #decor {
