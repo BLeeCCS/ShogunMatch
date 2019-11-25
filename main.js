@@ -33,7 +33,7 @@ function intializeApp() {
     var divContainer = $("<div>").append(firstDiv,secondDiv);
     $(".container").append(divContainer);
   }
-  
+
   $(".lfz-card").on("click", handleCardClick);
 }
 
@@ -86,34 +86,38 @@ function handleCardClick(event) {
       $(".lfz-card").on("click", handleCardClick);
       console.log(matches,max_matches);
       if (matches === max_matches) {
-        var modal = {
-          "width":"40vw",
-          "height": "20vh",
-          "background-color":'black',
-          "background-size":"cover",
-          "position":"absolute",
-          "display":"inline-block",
-          "margin":"auto",
-          "z-index":"2",
-          "text-align":"center",
-          "font-size":"3rem",
-          "padding":"20vh",
-          "border":"5px solid red",
-          "color": "yellow"
-        }
-        var myModal = $("<div>").css(modal).text("Congratulations!You Won!");
-        var button = $("<button>").css("font-size","2rem").text("Play Again?");
-        myModal.addClass("modalClass");
-        button.addClass("myButton");
-        button.appendTo(myModal);
-        $("body").append(myModal);
-        ++games_played;
-        $(".myButton").on("click",function() {
-          $(".modalClass").hide();
-        })
-        resetStats();
+        createModal();
       }
     }
   }
   displayStats();
+}
+
+function createModal() {
+  var modal = {
+    "width":"40vw",
+    "height": "20vh",
+    "background-color":'black',
+    "background-size":"cover",
+    "position":"absolute",
+    "display":"inline-block",
+    "margin":"auto",
+    "z-index":"2",
+    "text-align":"center",
+    "font-size":"3rem",
+    "padding":"20vh",
+    "border":"5px solid red",
+    "color": "yellow"
+  }
+  var myModal = $("<div>").css(modal).text("Congratulations!You Won!");
+  var button = $("<button>").css("font-size","2rem").text("Play Again?");
+  myModal.addClass("modalClass");
+  button.addClass("myButton");
+  button.appendTo(myModal);
+  $("body").append(myModal);
+  ++games_played;
+  $(".myButton").on("click",function() {
+    $(".modalClass").hide();
+  })
+  resetStats();
 }
