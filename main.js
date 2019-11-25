@@ -33,7 +33,7 @@ function intializeApp() {
     var divContainer = $("<div>").append(firstDiv,secondDiv);
     $(".container").append(divContainer);
   }
-
+  
   $(".lfz-card").on("click", handleCardClick);
 }
 

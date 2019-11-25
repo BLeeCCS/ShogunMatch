@@ -53,11 +53,11 @@ main {
 
 .container > div{
   display: inline-block;
-  background-color: black;
-  width:15%;
-  height: 16vh;
+  width:12%;
+  height: 49%;
   position: relative;
-  margin: 0.5%;
+  margin:0.1% 0.25% 0.1% 0.25%;
+  border:0.1% solid black;
 }
 
 #decor {
@@ -74,113 +74,81 @@ main {
 }
 
 .lfz-card, .background {
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100%;
   width:100%;
+  position: absolute;
 }
 
 .lfz-card {
   background-image: url("./images/CardBack.png");
-  position: absolute;
   z-index: 1;
 }
 
 .container > div:nth-child(1) > .background {
   background-image: url("./images/Samurai_1.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(2) > .background {
   background-image: url("./images/Samurai_2.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(3) > .background {
   background-image: url("./images/Samurai_3.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(4) > .background {
   background-image: url("./images/Samurai_4.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(5) > .background {
   background-image: url("./images/Samurai_5.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(6) > .background {
   background-image: url("./images/Samurai_6.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(7) > .background {
   background-image: url("./images/Samurai_7.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(8) > .background {
   background-image: url("./images/Samurai_8.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(9) > .background {
   background-image: url("./images/Samurai_1.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(10) > .background {
   background-image: url("./images/Samurai_2.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(11) > .background {
   background-image: url("./images/Samurai_3.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(12) > .background {
   background-image: url("./images/Samurai_4.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(13) > .background {
   background-image: url("./images/Samurai_5.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(14) > .background {
   background-image: url("./images/Samurai_6.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(15) > .background {
   background-image: url("./images/Samurai_7.png");
-  position: absolute;
-  top:0;
 }
 
 .container > div:nth-child(16) > .background {
   background-image: url("./images/Samurai_8.png");
-  position: absolute;
-  top:0;
 }
 
 .hidden {
