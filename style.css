@@ -16,32 +16,35 @@ body {
 }
 
 aside {
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
   position: absolute;
-  width:20%;
-  height: 61.55vh;
-  top:20vh;
+  width:100%;
+  height: 20vh;
+  bottom:0;
+  left:0;
   font-size:2rem;
-  margin:2%;
 }
 
 aside > div {
-  margin:auto;
+  margin:0;
+  width:16%;
   height:10vh;
   opacity: 0.6;
   position: relative;
   text-align: center;
   line-height: 10vh;
-  border: 1px black solid;
+  margin:auto;
+  border:2px solid black;
+  background-color: blanchedalmond;
 }
 
 main {
-  width:72%;
+  width:100%;
   height: 61.5vh;
   position: absolute;
   top:20vh;
-  right:0;
-  margin:2%;
+  margin:auto;
 } 
 
 .container {
@@ -54,7 +57,7 @@ main {
 .container > div{
   display: inline-block;
   width:12%;
-  height: 49%;
+  height: 50%;
   position: relative;
   margin:0.1% 0.25% 0.1% 0.25%;
   border:0.1% solid black;
@@ -70,11 +73,10 @@ main {
   width:20vw;
   left:0;
   top:0;
-  margin:2%;
 }
 
 .lfz-card, .background {
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
