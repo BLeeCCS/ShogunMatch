@@ -56,10 +56,10 @@ main {
 
 .container > div{
   display: inline-block;
-  width:12%;
+  width:10.22%;
   height: 50%;
   position: relative;
-  margin:0.1% 0.25% 0.1% 0.25%;
+  margin:0.5% 1% 0 1%;
   border:0.1% solid black;
 }
 
@@ -73,6 +73,14 @@ main {
   width:20vw;
   left:0;
   top:0;
+}
+
+button {
+  width:50px;
+  height:40px;
+  background-color: blue;
+  position: absolute;
+  right:0;
 }
 
 .lfz-card, .background {
@@ -89,67 +97,35 @@ main {
   z-index: 1;
 }
 
-.container > div:nth-child(1) > .background {
+#card1 > .background, #card9 > .background {
   background-image: url("./images/Samurai_1.png");
 }
 
-.container > div:nth-child(2) > .background {
+#card2 > .background, #card10 > .background {
   background-image: url("./images/Samurai_2.png");
 }
 
-.container > div:nth-child(3) > .background {
+#card3 > .background, #card11 > .background {
   background-image: url("./images/Samurai_3.png");
 }
 
-.container > div:nth-child(4) > .background {
+#card4 > .background, #card12 > .background {
   background-image: url("./images/Samurai_4.png");
 }
 
-.container > div:nth-child(5) > .background {
+#card5 > .background, #card13 > .background {
   background-image: url("./images/Samurai_5.png");
 }
 
-.container > div:nth-child(6) > .background {
+#card6 > .background, #card14 > .background {
   background-image: url("./images/Samurai_6.png");
 }
 
-.container > div:nth-child(7) > .background {
+#card7 > .background, #card15 > .background {
   background-image: url("./images/Samurai_7.png");
 }
 
-.container > div:nth-child(8) > .background {
-  background-image: url("./images/Samurai_8.png");
-}
-
-.container > div:nth-child(9) > .background {
-  background-image: url("./images/Samurai_1.png");
-}
-
-.container > div:nth-child(10) > .background {
-  background-image: url("./images/Samurai_2.png");
-}
-
-.container > div:nth-child(11) > .background {
-  background-image: url("./images/Samurai_3.png");
-}
-
-.container > div:nth-child(12) > .background {
-  background-image: url("./images/Samurai_4.png");
-}
-
-.container > div:nth-child(13) > .background {
-  background-image: url("./images/Samurai_5.png");
-}
-
-.container > div:nth-child(14) > .background {
-  background-image: url("./images/Samurai_6.png");
-}
-
-.container > div:nth-child(15) > .background {
-  background-image: url("./images/Samurai_7.png");
-}
-
-.container > div:nth-child(16) > .background {
+#card8 > .background, #card16 > .background {
   background-image: url("./images/Samurai_8.png");
 }
 
