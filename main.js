@@ -6,17 +6,20 @@ var matches = 0;
 var max_matches = 8;
 var attempts = 0;
 var games_played = 0;
+var timer = 125;
 var image1, image2;
+var music = new Audio();
+music.src = "./for_the_daimyo.mp3";
 
 function intializeApp() {
+  // music.play();
+  $("span").append(timer);
   $(".lfz-card").on("click", handleCardClick);
   $("button").on("click",playSound);
 }
 
 function playSound(){
-  var music = new Audio();
-  music.src = "./for_the_daimyo.mp3";
-  music.play();
+  music.pause();
 }
 
 function calculateAccuracy(){
