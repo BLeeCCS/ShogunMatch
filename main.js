@@ -96,30 +96,9 @@ function handleCardClick(event) {
 }
 
 function youWin() {
-  // var modal = {
-  //   "width":"40vw",
-  //   "height": "20vh",
-  //   "background-color":'black',
-  //   "background-size":"cover",
-  //   "position":"absolute",
-  //   "display":"inline-block",
-  //   "margin":"auto",
-  //   "z-index":"2",
-  //   "text-align":"center",
-  //   "font-size":"3rem",
-  //   "padding":"20vh",
-  //   "border":"5px solid red",
-  //   "color": "yellow"
-  // }
-  var myModal = $("<div>").css(modal).text("Congratulations!You Won!");
-  var button = $("<button>").css("font-size","2rem").text("Play Again?");
-  myModal.addClass("modalClass");
-  button.addClass("myButton");
-  button.appendTo(myModal);
-  $("body").append(myModal);
+  $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("Congratulations!You Won!");
+  $("<#modalButton>").appendTo("$modal");
   ++games_played;
-  $(".myButton").on("click",function() {
-    $(".modalClass").hide();
-  })
+  $("#modalButton").on("click",() => { $("#modal").css("visibility","hidden"); })
   resetStats();
 }
