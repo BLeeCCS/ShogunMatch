@@ -12,10 +12,25 @@ var music = new Audio();
 music.src = "./for_the_daimyo.mp3";
 
 function intializeApp() {
-  // music.play();
-  $("span").append(timer);
+  //music.play();
+  //clock();
   $(".lfz-card").on("click", handleCardClick);
   $("button").on("click",playSound);
+}
+
+function shuffle() {
+
+}
+
+function clock() {
+  $("span").text(timer);
+  var currentTimer = setInterval(()=>{
+    timer -= 1;
+    $("span").text(timer);
+    
+    if(timer == 0) 
+      clearInterval(currentTimer);
+  },1000);
 }
 
 function playSound(){
@@ -73,29 +88,29 @@ function handleCardClick(event) {
       $(".lfz-card").on("click", handleCardClick);
       console.log(matches,max_matches);
       if (matches === max_matches) {
-        createModal();
+        youWin();
       }
     }
   }
   displayStats();
 }
 
-function createModal() {
-  var modal = {
-    "width":"40vw",
-    "height": "20vh",
-    "background-color":'black',
-    "background-size":"cover",
-    "position":"absolute",
-    "display":"inline-block",
-    "margin":"auto",
-    "z-index":"2",
-    "text-align":"center",
-    "font-size":"3rem",
-    "padding":"20vh",
-    "border":"5px solid red",
-    "color": "yellow"
-  }
+function youWin() {
+  // var modal = {
+  //   "width":"40vw",
+  //   "height": "20vh",
+  //   "background-color":'black',
+  //   "background-size":"cover",
+  //   "position":"absolute",
+  //   "display":"inline-block",
+  //   "margin":"auto",
+  //   "z-index":"2",
+  //   "text-align":"center",
+  //   "font-size":"3rem",
+  //   "padding":"20vh",
+  //   "border":"5px solid red",
+  //   "color": "yellow"
+  // }
   var myModal = $("<div>").css(modal).text("Congratulations!You Won!");
   var button = $("<button>").css("font-size","2rem").text("Play Again?");
   myModal.addClass("modalClass");
