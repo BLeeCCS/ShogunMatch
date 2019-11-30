@@ -8,11 +8,16 @@ var attempts = 0;
 var games_played = 0;
 var timer = 125;
 var image1, image2;
-var music = new Audio();
-music.src = "./for_the_daimyo.mp3";
+var timerMusic = new Audio();
+var victoryMusic = new Audio();
+var defeatMusic = new Audio();
+
+timerMusic.src = "./sounds/for_the_daimyo.mp3";
+victoryMusic.src = "./sounds/Victory.mp3";
+defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  //music.play();
+  //timerMusic.play();
   //clock();
   $(".lfz-card").on("click", handleCardClick);
   $("button").on("click",playSound);
@@ -74,12 +79,12 @@ function handleCardClick(event) {
         firstCardClicked.removeClass("hidden");
         firstCardClicked = null;
         $(".lfz-card").on("click", handleCardClick);
-      }, 1500)
+      }, 1500);
 
       setTimeout(function () {
         secondCardClicked.removeClass("hidden");
         secondCardClicked = null;
-      }, 1500)
+      }, 1500);
 
     } else {
       firstCardClicked = null;
@@ -96,9 +101,21 @@ function handleCardClick(event) {
 }
 
 function youWin() {
-  $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("Congratulations!You Won!");
+  timerMusic.pause();
+  victoryMusic.play();
+  $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("Victory Is Yours!!!");
+  var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
+
+  function randomColor() {
+    return colors[Math.floor(Math.random(colors.length) * 9)];
+  }
+
+  setInterval(()=>{
+    $("#modal").css("color",randomColor());
+  },50);
+  
   $("<#modalButton>").appendTo("$modal");
   ++games_played;
-  $("#modalButton").on("click",() => { $("#modal").css("visibility","hidden"); })
+  $("#modalButton").on("click",() => { $("#modal").css("visibility","hidden"); });
   resetStats();
 }
