@@ -17,8 +17,8 @@ victoryMusic.src = "./sounds/Victory.mp3";
 defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  //timerMusic.play();
-  //clock();
+  timerMusic.play();
+  clock();
   $(".lfz-card").on("click", handleCardClick);
   $("button").on("click",playSound);
 }
@@ -29,19 +29,16 @@ function shuffle() {
 
 function clock() {
   $("span").text(timer);
-  
-
-  var currentTimer = setInterval(()=>{
-    timer -= 1;
-    $("span").text(timer);
-    
-    if(timer == 0) 
-      clearInterval(currentTimer);
-  },1000);
-}
-
-function playSound(){
-  music.pause();
+  if (timer == 125) {
+    clearInterval(currentTimer);
+    var currentTimer = setInterval(()=>{
+      timer -= 1;
+      $("span").text(timer);
+      
+      if(matches === max_matches || timer == 0) 
+        clearInterval(currentTimer);
+    },1000);
+  };
 }
 
 function calculateAccuracy(){
@@ -116,15 +113,16 @@ function youWin() {
   button.appendTo($("#modal"));
   ++games_played;
   $("#modalButton").on("click",() => {  $("#modal").css("visibility","hidden"); 
-                                        resetStats();
-                                        clearInterval(changefontColor); });
+                                        clearInterval(changefontColor); 
+                                        victoryMusic.pause();
+                                        resetStats();});
 };
 
 function resetStats(){
-  victoryMusic.pause();
-  timer = 125;
-  timerMusic.play();
-  clock();
+  timerMusic.load();
   matches = attempts = 0;
   $(".lfz-card").removeClass("hidden");
+  timer = 125;
+  clock();
+  timerMusic.play();
 }
