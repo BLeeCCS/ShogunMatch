@@ -121,7 +121,8 @@ span {
   width: 10%;
   height: 10%;
   position: absolute;
-  font-size: 100%;
+  bottom:35%;
+  font-size: 1rem;
 }
 
 .lfz-card, .background {

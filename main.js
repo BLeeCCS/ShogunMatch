@@ -29,6 +29,8 @@ function shuffle() {
 
 function clock() {
   $("span").text(timer);
+  
+
   var currentTimer = setInterval(()=>{
     timer -= 1;
     $("span").text(timer);
@@ -55,11 +57,6 @@ function displayStats(){
   $("aside > div:nth-child(2)").text(games_played);
   $("aside > div:nth-child(4)").text(attempts);
   $("aside > div:nth-child(6)").text(calculateAccuracy() + "%");
-}
-
-function resetStats(){
-  matches = attempts = 0;
-  $(".lfz-card").removeClass("hidden");
 }
 
 function handleCardClick(event) {
@@ -102,20 +99,32 @@ function handleCardClick(event) {
 
 function youWin() {
   timerMusic.pause();
+  victoryMusic.load();
   victoryMusic.play();
-  $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("Victory Is Yours!!!");
+  $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("VICTORY IS YOURS!!!");
   var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
 
   function randomColor() {
     return colors[Math.floor(Math.random(colors.length) * 9)];
   }
 
-  setInterval(()=>{
+  var changefontColor = setInterval(()=>{
     $("#modal").css("color",randomColor());
   },50);
-  
-  $("<#modalButton>").appendTo("$modal");
+
+  var button = $("<button>").attr("id","modalButton").text("Play Again?");
+  button.appendTo($("#modal"));
   ++games_played;
-  $("#modalButton").on("click",() => { $("#modal").css("visibility","hidden"); });
-  resetStats();
+  $("#modalButton").on("click",() => {  $("#modal").css("visibility","hidden"); 
+                                        resetStats();
+                                        clearInterval(changefontColor); });
+};
+
+function resetStats(){
+  victoryMusic.pause();
+  timer = 125;
+  timerMusic.play();
+  clock();
+  matches = attempts = 0;
+  $(".lfz-card").removeClass("hidden");
 }
