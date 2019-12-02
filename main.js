@@ -11,6 +11,7 @@ var image1, image2;
 var timerMusic = new Audio();
 var victoryMusic = new Audio();
 var defeatMusic = new Audio();
+var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
 
 timerMusic.src = "./sounds/for_the_daimyo.mp3";
 victoryMusic.src = "./sounds/Victory.mp3";
@@ -20,7 +21,6 @@ function intializeApp() {
   timerMusic.play();
   clock();
   $(".lfz-card").on("click", handleCardClick);
-  $("button").on("click",playSound);
 }
 
 function shuffle() {
@@ -37,6 +37,9 @@ function clock() {
       
       if(matches === max_matches || timer == 0) 
         clearInterval(currentTimer);
+        if (timer == 0) {
+          youLose();
+        }
     },1000);
   };
 }
@@ -99,11 +102,6 @@ function youWin() {
   victoryMusic.load();
   victoryMusic.play();
   $("#modal").css({"background-image":"url(./images/Winning.jpg)","visibility":"visible"}).text("VICTORY IS YOURS!!!");
-  var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
-
-  function randomColor() {
-    return colors[Math.floor(Math.random(colors.length) * 9)];
-  }
 
   var changefontColor = setInterval(()=>{
     $("#modal").css("color",randomColor());
@@ -115,7 +113,26 @@ function youWin() {
   $("#modalButton").on("click",() => {  $("#modal").css("visibility","hidden"); 
                                         clearInterval(changefontColor); 
                                         victoryMusic.pause();
-                                        resetStats();});
+                                        resetStats();} );
+};
+
+function youLose() {
+  timerMusic.pause();
+  defeatMusic.load();
+  defeatMusic.play();
+  $("#modal").css({"background-image":"url(./images/Losing.jpg)","visibility":"visible"}).text("YOU ARE DEFEATED!!!");
+
+  var changefontColor = setInterval(()=>{
+    $("#modal").css("color",randomColor());
+  },50);
+
+  var button = $("<button>").attr("id","modalButton").text("Play Again?");
+  button.appendTo($("#modal"));
+  ++games_played;
+  $("#modalButton").on("click",() => {  $("#modal").css("visibility","hidden"); 
+                                        clearInterval(changefontColor); 
+                                        defeatMusic.pause();
+                                        resetStats();} );
 };
 
 function resetStats(){
@@ -125,4 +142,8 @@ function resetStats(){
   timer = 125;
   clock();
   timerMusic.play();
+}
+
+function randomColor() {
+  return colors[Math.floor(Math.random(colors.length) * 9)];
 }
