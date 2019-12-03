@@ -18,13 +18,15 @@ victoryMusic.src = "./sounds/Victory.mp3";
 defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  timerMusic.play();
-  clock();
+  //timerMusic.play();
+  //clock();
+  shuffle();
   $(".lfz-card").on("click", handleCardClick);
 }
 
 function shuffle() {
-
+  var shuffleCard = Math.floor(Math.random(8) * 8 + 1);
+  console.log(shuffleCard);
 }
 
 function clock() {
