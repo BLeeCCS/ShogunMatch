@@ -25,8 +25,20 @@ function intializeApp() {
 }
 
 function shuffle() {
-  var shuffleCard = Math.floor(Math.random(8) * 8 + 1);
-  console.log(shuffleCard);
+  let shuffleCard = null;
+  let cardArray = [1,2,3,4,5,6,7,8];
+  
+  while (cardArray.length != 0) {
+    shuffleCard = Math.floor(Math.random(8) * 8 + 1);
+    
+    for (let i = 0; i < cardArray.length; i++) {
+      if (shuffleCard == cardArray[i]){
+        console.log(shuffleCard);
+        cardArray.splice(i,1);
+        console.log(cardArray);
+      }
+    }
+  }
 }
 
 function clock() {
