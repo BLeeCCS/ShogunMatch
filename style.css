@@ -139,38 +139,6 @@ span {
   z-index: 1;
 }
 
-#card1 > .background, #card9 > .background {
-  background-image: url("./images/Samurai_1.png");
-}
-
-#card2 > .background, #card10 > .background {
-  background-image: url("./images/Samurai_2.png");
-}
-
-#card3 > .background, #card11 > .background {
-  background-image: url("./images/Samurai_3.png");
-}
-
-#card4 > .background, #card12 > .background {
-  background-image: url("./images/Samurai_4.png");
-}
-
-#card5 > .background, #card13 > .background {
-  background-image: url("./images/Samurai_5.png");
-}
-
-#card6 > .background, #card14 > .background {
-  background-image: url("./images/Samurai_6.png");
-}
-
-#card7 > .background, #card15 > .background {
-  background-image: url("./images/Samurai_7.png");
-}
-
-#card8 > .background, #card16 > .background {
-  background-image: url("./images/Samurai_8.png");
-}
-
 .hidden {
   display: none;
 }
