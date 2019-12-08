@@ -18,26 +18,20 @@ victoryMusic.src = "./sounds/Victory.mp3";
 defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  //timerMusic.play();
-  //clock();
+  timerMusic.play();
+  clock();
   shuffle();
   $(".lfz-card").on("click", handleCardClick);
 }
 
 function shuffle() {
-  let shuffleCard = null;
-  let cardArray = [1,2,3,4,5,6,7,8];
-  
-  while (cardArray.length != 0) {
-    shuffleCard = Math.floor(Math.random(8) * 8 + 1);
-    
-    for (let i = 0; i < cardArray.length; i++) {
-      if (shuffleCard == cardArray[i]){
-        console.log(shuffleCard);
-        cardArray.splice(i,1);
-        console.log(cardArray);
-      }
-    }
+  let randomImage = null;
+  let image = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
+
+  for (let card = 1; card <= 16; card++) {
+    randomImage = Math.floor(Math.random(image.length) * image.length);
+    $("#card"+ card + ">.background" ).css("background-image","url("+"./images/Samurai_"+image[randomImage]+".png");
+    image.splice(randomImage,1);
   }
 }
 
@@ -59,12 +53,12 @@ function clock() {
 }
 
 function calculateAccuracy(){
-  var accuracy = matches / attempts;
-  accuracy = accuracy.toFixed(2) * 100;
+  var accuracy = (matches / attempts) * 100;
+
   if (isNaN(accuracy)){
     return 0;
   }
-  return accuracy;
+  return accuracy.toFixed(0);
 }
 
 function displayStats(){
