@@ -18,8 +18,8 @@ victoryMusic.src = "./sounds/Victory.mp3";
 defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  timerMusic.play();
-  clock();
+  //timerMusic.play();
+  //clock();
   shuffle();
   $(".lfz-card").on("click", handleCardClick);
 }
@@ -144,6 +144,7 @@ function youLose() {
 };
 
 function resetStats(){
+  shuffle();
   timerMusic.load();
   matches = attempts = 0;
   $(".lfz-card").removeClass("hidden");
