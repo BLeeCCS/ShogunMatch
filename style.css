@@ -3,16 +3,39 @@ body {
   height: 100vh;
   position: relative;
   margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#decor {
+  background-image: url(./images/Samurai_BG.png);
+  position: absolute;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: center;
+  height:20vh;
+  width:20vw;
+  left:0;
+  top:0;
 }
 
 #title {
   background-image: url(./images/Title.png);
   background-size:contain;
-  position: relative;
+  position: absolute;
   background-repeat: no-repeat;
   height:20vh;
   width:25%;
-  margin: auto;
+  left: 40vw;
+}
+
+#timer {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  right: 5%;
+  top: 5%;
+  font-size: 2rem;
+  text-align: center;
 }
 
 aside {
@@ -63,38 +86,6 @@ main {
   border:0.1% solid black;
 }
 
-#decor {
-  background-image: url(./images/Samurai_BG.png);
-  position: absolute;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position: center;
-  height:20vh;
-  width:20vw;
-  left:0;
-  top:0;
-}
-
-#music {
-  background-image: url(./images/mute.png);
-  background-size: 100%;
-  width:50px;
-  height:50px;
-  position: absolute;
-  right:4%;
-  top:6%;
-}
-
-#timer {
-  position: absolute;
-  width: 20%;
-  height: 10%;
-  right: 15%;
-  top: 5%;
-  font-size: 2rem;
-  text-align: center;
-}
-
 span {
   line-height: 10vh;
 }
@@ -114,7 +105,6 @@ span {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color:whitesmoke;
 }
 
 #modalButton {
