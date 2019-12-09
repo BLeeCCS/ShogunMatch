@@ -8,19 +8,20 @@ var attempts = 0;
 var games_played = 0;
 var timer = 125;
 var image1, image2;
+var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
+
+var startMusic = new Audio();
 var timerMusic = new Audio();
 var victoryMusic = new Audio();
 var defeatMusic = new Audio();
-var colors = ["red","green","yellow","pink", "purple", "blue", "orange","violet","aqua"];
 
-timerMusic.src = "./sounds/for_the_daimyo.mp3";
+startMusic.src = "./sounds/Start.mp3";
+timerMusic.src = "./sounds/Timer.mp3";
 victoryMusic.src = "./sounds/Victory.mp3";
 defeatMusic.src = "./sounds/Defeat.mp3";
 
 function intializeApp() {
-  //timerMusic.play();
-  //clock();
-  shuffle();
+  start();
   $(".lfz-card").on("click", handleCardClick);
 }
 
@@ -158,5 +159,14 @@ function randomColor() {
 }
 
 function start() {
-  
+  startMusic.load();
+  startMusic.play();
+
+  $("#modal").css({"background-image":"url(./images/Start.jpg)","visibility":"visible"});
+
+  var button = $("<button>").attr("id","modalButton").text("Click To Start");
+  button.appendTo($("#modal"));
+  $("#modalButton").on("click",() => {  $("#modal").css("visibility","hidden");
+                                        startMusic.pause();
+                                        resetStats();} );
 }
