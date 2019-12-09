@@ -156,3 +156,7 @@ function resetStats(){
 function randomColor() {
   return colors[Math.floor(Math.random(colors.length) * 9)];
 }
+
+function start() {
+  
+}
