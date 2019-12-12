@@ -17,10 +17,10 @@ body {
   background-size:contain;
   background-repeat:no-repeat;
   background-position: center;
-  height:20vh;
-  width:20vw;
+  height:20%;
+  width:20%;
   left:0;
-  top:0;
+  top:1vh;
 }
 
 #title {
@@ -30,6 +30,7 @@ body {
   background-repeat: no-repeat;
   height:20vh;
   width:25%;
+  top:2vh;
   left: 40vw;
 }
 
@@ -82,7 +83,7 @@ main {
   height:61.5vh;
 }
 
-.container > div{
+.container > div {
   display: inline-block;
   width:10.22%;
   height: 50%;
@@ -137,29 +138,64 @@ span {
   display: none;
 }
 
-@media only screen and (max-width: 1244px) {
+@media only screen and (min-width: 1504px) {
+  #decor {
+    top:2vh;
+  }
+
+  #title {
+    height:20vh;
+    width:30%;
+    top:2vh;
+    left: 40vw;
+  }
+
+  #timer {
+    top: 8%;
+  }
+
   main {
-    width:100%;
-    height: 61.5vh;
-    position: absolute;
     top:25vh;
-    margin:auto;
   } 
   
-  .container {
-    position: relative;
-    flex-wrap: wrap;
+  .container > div{
+    width:10%;
+    height: 40%;
+    margin:0% 1% 0% 1%;
+    left:1%;
+  }
+  
+  aside {
     width:100%;
-    height:61.5vh;
+    height: 20vh;
+    bottom:5%;
+    left:0;
+    font-size:2rem;
+  }
+
+  #modal {
+    top:23%;
+    height: 55%;
+  }
+}
+
+@media only screen and (max-width: 1244px) { 
+  #decor {
+    top:3vh;
   }
 
   .container > div{
-    display: inline-block;
     width:10%;
     height: 40%;
-    position: relative;
     margin:0% 1% 0% 1%;
-    border:0.1% solid black;
+    left:1%;
   }
-  
+
+  aside {
+    width:100%;
+    height: 20vh;
+    bottom:10%;
+    left:0;
+    font-size:2rem;
+  }
 }
